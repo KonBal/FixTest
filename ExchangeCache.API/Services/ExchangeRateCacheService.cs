@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace ExchangeCache.API.Services
 {
+    /// <summary>
+    /// Обеспечивает взаимодействие локальной базы и источника курсов
+    /// </summary>
     public class ExchangeRateCacheService : IExchangeRateCacheService
     {
         private readonly IExchangeRateRepository _rateRepo;

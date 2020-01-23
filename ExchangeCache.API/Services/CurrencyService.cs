@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace ExchangeCache.API.Services
 {
+    /// <summary>
+    /// Хранит локально список валют доступных в источнике.
+    /// </summary>
     public class CurrencyService : ICurrencyService
     {
         private List<string> _availableCurrencies;

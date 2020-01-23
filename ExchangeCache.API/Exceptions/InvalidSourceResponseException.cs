@@ -5,6 +5,10 @@ using System.Threading.Tasks;
 
 namespace ExchangeCache.API.Exceptions
 {
+    /// <summary>
+    /// Исключение, возникающее при невозможности обработать ответ от источника.
+    /// Например, если изменилась схема.
+    /// </summary>
     [Serializable]
     public class InvalidSourceResponseException : Exception
     {

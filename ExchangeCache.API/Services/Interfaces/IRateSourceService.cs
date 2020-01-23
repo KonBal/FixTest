@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ExchangeCache.API.Services
 {
+    /// <summary>
+    /// Клиент для получения актуальных курсов из источника
+    /// </summary>
     public interface IRateSourceService
     {
         /// <summary>

@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace ExchangeCache.API.Exceptions
 {
+    /// <summary>
+    /// Исключение при запросе не представленной в источнике валюты.
+    /// </summary>
     [Serializable]
     public class InvalidTargetCurrencyException : Exception
     {

@@ -7,6 +7,9 @@ namespace ExchangeCache.API.Options
 {
     public class UrlsConfig
     {
+        /// <summary>
+        /// Точки доступа к методам источника
+        /// </summary>
         public class RateSourceOperations
         {
             public static string GetLatest(string fromCurrency, params string[] toCurrencies)
@@ -16,6 +19,9 @@ namespace ExchangeCache.API.Options
                 => $"/api/currencies.json";
         }
 
+        /// <summary>
+        /// Endpoint источника
+        /// </summary>
         public string RateSource { get; set; }
 
     }

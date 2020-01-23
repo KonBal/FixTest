@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace ExchangeCache.API.Exceptions
 {
+    /// <summary>
+    /// Общее исключение на ошибки при сохранении данных в БД
+    /// </summary>
     [Serializable]
     public class DatabaseException : Exception
     {

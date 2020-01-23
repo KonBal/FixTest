@@ -31,6 +31,11 @@ namespace ExchangeCache.API.Controllers
             _expirationPeriod = options.Value.ExpirationPeriod;
         }
 
+        /// <summary>
+        /// Получить курсы обмена по всем валютам для заданной валюты
+        /// </summary>
+        /// <param name="from">валюта продажи</param>
+        /// <returns></returns>
         [HttpGet]
         [Route("rates/{from}")]
         [ProducesResponseType(typeof(RatesResponse), (int)HttpStatusCode.OK)]
@@ -67,7 +72,12 @@ namespace ExchangeCache.API.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Получить курс для конкретной пары валют
+        /// </summary>
+        /// <param name="from">валюта продажи</param>
+        /// <param name="to">валюта покупки</param>
+        /// <returns></returns>
         [HttpGet]
         [Route("rates/{from}/{to}")]
         [ProducesResponseType(typeof(RatesResponse), (int)HttpStatusCode.OK)]
