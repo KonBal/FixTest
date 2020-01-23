@@ -15,9 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ExchangeCache.API\ExchangeCache.API.csproj" />
     <ProjectReference Include="..\ExchangeCache.Domain\ExchangeCache.Domain.csproj" />
     <ProjectReference Include="..\ExchangeCache.Infrastructure\ExchangeCache.Infrastructure.csproj" />
-    <ProjectReference Include="..\FixTestTask\ExchangeCache.API.csproj" />
   </ItemGroup>
 
 </Project>
