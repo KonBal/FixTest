@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExchangeCache.API.Services
 {
-    interface IRateSourceService
+    public interface IRateSourceService
     {
         /// <summary>
         /// Получить актуальный курс валют

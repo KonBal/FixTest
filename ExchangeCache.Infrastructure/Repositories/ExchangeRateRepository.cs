@@ -32,7 +32,7 @@ namespace ExchangeCache.Infrastructure.Repositories
             _context.ExchangeRates.AddRange(rates);
         }
 
-        public async Task<ExchangeRate> GetLatestForPair(string sourceCurrency, string targetCurrency)
+        public async Task<ExchangeRate> GetLatestForPairAsync(string sourceCurrency, string targetCurrency)
         {
             return await _context.ExchangeRates
                 .Where(r => r.SourceCurrency == sourceCurrency
@@ -41,7 +41,7 @@ namespace ExchangeCache.Infrastructure.Repositories
                 .FirstOrDefaultAsync();
         }
 
-        public async Task<List<ExchangeRate>> GetLatest(string sourceCurrency)
+        public async Task<List<ExchangeRate>> GetLatestAsync(string sourceCurrency)
         {
             return await _context.ExchangeRates
                 .Where(r => r.SourceCurrency == sourceCurrency)

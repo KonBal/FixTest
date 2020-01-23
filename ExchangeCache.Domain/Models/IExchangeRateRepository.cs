@@ -11,8 +11,8 @@ namespace ExchangeCache.Domain.Models
     /// </summary>
     public interface IExchangeRateRepository : IRepository
     {
-        Task<ExchangeRate> GetLatestForPair(string sourceCurrency, string targetCurrency);
-        Task<List<ExchangeRate>> GetLatest(string sourceCurrency);
+        Task<ExchangeRate> GetLatestForPairAsync(string sourceCurrency, string targetCurrency);
+        Task<List<ExchangeRate>> GetLatestAsync(string sourceCurrency);
         ExchangeRate Add(ExchangeRate rate);
         void AddRange(IEnumerable<ExchangeRate> rates);
     }

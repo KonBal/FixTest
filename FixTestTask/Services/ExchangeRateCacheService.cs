@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ExchangeCache.API.Services
 {
-    class ExchangeRateCacheService : IExchangeRateCacheService
+    public class ExchangeRateCacheService : IExchangeRateCacheService
     {
         private readonly IExchangeRateRepository _rateRepo;
         private readonly IRateSourceService _rateSource;
@@ -39,7 +39,7 @@ namespace ExchangeCache.API.Services
         /// <exception cref="DatabaseException"></exception>
         public async Task<ExchangeRate> GetRatesAndCacheAsync(string fromCurrency, string toCurrency)
         {
-            var cachedRate = await _rateRepo.GetLatestForPair(fromCurrency, toCurrency);
+            var cachedRate = await _rateRepo.GetLatestForPairAsync(fromCurrency, toCurrency);
             if (cachedRate == null || IsExpired(cachedRate))
             {
                 var newRate = await _rateSource.GetRateInfoAsync(fromCurrency, toCurrency);
@@ -70,8 +70,8 @@ namespace ExchangeCache.API.Services
         /// <exception cref="DatabaseException"></exception>
         public async Task<IEnumerable<ExchangeRate>> GetRatesAndCacheAsync(string fromCurrency)
         {
-            //получаем все курсы с этой валютой
-            var cachedCurrencies = await _rateRepo.GetLatest(fromCurrency);
+            //получаем все курсы с этой валютой из базы
+            var cachedCurrencies = await _rateRepo.GetLatestAsync(fromCurrency);
             //здесь будем хранить коды валют, курсы которых в базе устарели или вообще отсутствуют, для запроса к источнику
             var currencyList = _currency.AvailableCurrencies.ToList();
             var result = new List<ExchangeRate>();

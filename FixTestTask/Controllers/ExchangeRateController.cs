@@ -45,7 +45,7 @@ namespace ExchangeCache.API.Controllers
                     Rates = rates.Select(r => ToRateInfo(r)).ToArray()
                 };
                 return Ok(result);
-            }
+            }//так как формат результата при ошибках не обозначен в задании, сделал общий BadRequest с сообщением
             catch(HttpRequestException ex)
             {
                 _logger.LogError("Bad request to the exchange rate source: {ex}", ex);
